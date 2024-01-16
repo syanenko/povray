@@ -11270,8 +11270,8 @@ ObjectPtr Parser::Parse_Polyline()
         GET(LEFT_CURLY_TOKEN)
         while(Allow_Vector(Local_Vector))
         {
-          ssize_t idx1 = std::min(Local_Vector[0], Local_Vector[1]);
-          ssize_t idx2 = std::max(Local_Vector[0], Local_Vector[1]);
+          size_t idx1 = std::min(Local_Vector[0], Local_Vector[1]);
+          size_t idx2 = std::max(Local_Vector[0], Local_Vector[1]);
           if ((idx1>=0)&&(idx2>=0))
           {
             if (Range.size() < idx2+1)

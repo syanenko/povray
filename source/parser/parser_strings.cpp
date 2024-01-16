@@ -433,7 +433,7 @@ UCS2 *Parser::Parse_CameraType(bool )
     // sceneData->cameras (.size(), [])
     Camera that_camera;
     const char * textual;
-    char tmp_compound[4+strlen(Get_Token_String(CYLINDER_TOKEN))];
+    char* tmp_compound = new char[4 + strlen(Get_Token_String(CYLINDER_TOKEN))];
     unsigned int idx=0; /* default to first camera */
     if (sceneData->clocklessAnimation == true)
     {
@@ -612,6 +612,8 @@ UCS2 *Parser::Parse_CameraType(bool )
             textual = "Unknown Camera type";
             break;
     }
+
+    delete tmp_compound;
     return String_To_UCS2(textual);
 }
 
